@@ -1,0 +1,775 @@
+##############################################################################
+  MedAgentix AI -- CLINICAL DIAGNOSTIC REPORT
+  Generated: 02-Jun-2026 23:09
+##############################################################################
+
+##############################################################################
+  CLINICAL DIAGNOSTIC REPORT
+  Patient: RAHUL SHARMA
+  Report ID: MED-202606022308
+  Generated: 02-Jun-2026 23:08:56
+##############################################################################
+
+
+  PATIENT INFORMATION
+  ~~~~~~~~~~~~~~~~~~~
+
+      Name...................................... Rahul Sharma
+      Age....................................... 35 years
+      Gender.................................... Male
+      Report Date............................... 02-Jun-2026  23:08
+      Report ID................................. MED-202606022308
+
+  PRESENTING COMPLAINTS
+  ~~~~~~~~~~~~~~~~~~~~~
+
+      [+] Fever                          Duration: 5 days
+      [+] Cough                          Duration: 5 days
+      [+] Fatigue                        Duration: -
+      [+] Body Pain                      Duration: 5 days
+      [+] Headache                       Duration: 3 days
+      [+] Difficulty Breathing           Duration: 2 days
+
+  VITALS
+  ~~~~~~
+
+      Heart Rate................................ 85 bpm  [Normal sinus]
+      SpO2...................................... 96%  [Normal]
+      Blood Pressure............................ 120/80 mmHg
+      Temperature............................... 101.5 F
+      Cholesterol............................... 190 mg/dL
+
+  MEDICAL HISTORY
+  ~~~~~~~~~~~~~~~
+
+      Past Medical History (PMH)................ None documented
+      Social / Lifestyle Factors................ None documented
+
+==============================================================================
+  SECTION 1: CLINICAL IMPRESSION
+==============================================================================
+
+      Primary Diagnosis......................... Malaria  (ICD-10: B54)
+      Diagnostic Confidence..................... 23.4%  [Low (<50%)]
+      Clinical Severity......................... Severe
+      Disease Category.......................... Infectious / Parasitic
+      Diagnosis Source.......................... Flagged For Review
+      Agent Agreement Score..................... 0.5
+
+      Differential Considerations:
+      Rank   Condition                          Probability 
+      ----   .................................. ............
+      1      Bronchial Asthma                   18.4%        << Primary
+      2      Heart attack                       5.8%         
+      3      hepatitis A                        3.8%         
+      4      Paralysis (brain hemorrhage)       2.7%         
+
+==============================================================================
+  SECTION 2: PATHOPHYSIOLOGY & CLINICAL CONTEXT
+==============================================================================
+
+      Disease Mechanism:
+        Plasmodium species (P. falciparum most severe) transmitted by
+        Anopheles mosquito. Erythrocytic cycle causes periodic
+        hemolysis, cytokine release, and characteristic cyclic
+        fevers.
+
+      Key Diagnostic Markers.................... Peripheral blood smear (thick/thin), Rapid Diagnostic Test (RDT), CBC
+      Expected Prognosis........................ Excellent with early antimalarial therapy; P. falciparum can be severe
+
+==============================================================================
+  SECTION 3: CLINICAL SYMPTOM ANALYSIS
+==============================================================================
+
+      No structured symptoms extracted from clinical text.
+
+==============================================================================
+  SECTION 4: RISK STRATIFICATION
+==============================================================================
+
+      Overall Risk Level........................ Low
+      Identified Risk Factors................... 0 factors
+
+==============================================================================
+  SECTION 5: EMERGENCY TRIAGE ASSESSMENT
+==============================================================================
+
+      Emergency Classification.................. Non-Emergency
+      Triage Level (ESI)........................ Level 3
+
+      Symptom Progression....................... Stable
+      Temporal Urgency.......................... High
+      Onset Category............................ N/A
+
+==============================================================================
+  SECTION 6: PREDICTIVE MODEL OUTPUT
+==============================================================================
+
+      Ensemble Prediction....................... peptic ulcer
+      Prediction Probability.................... 0.4876  (48.8%)
+      Model Architecture........................ Voting Ensemble (XGBoost + RF + LightGBM)
+
+      Ranked Differential (ML-based):
+      Rank   Disease                            Probability    Decision
+      ----   .................................. .............. ..........
+      1      peptic ulcer                       0.4876         << Selected
+      2      stroke                             0.2480         
+      3      gastroenteritis                    0.0542         
+      4      migraine                           0.0476         
+      5      flu                                0.0410         
+
+      Active Feature Signals (11 features):
+        Age                              = 35
+        Gender                           = 1
+        Blood Pressure                   = 1
+        Cholesterol                      = 190
+        Duration                         = 3
+        Severity                         = 2
+        Symptom Count                    = 1
+        Temporal Risk Score              = 0.6666666666666666
+        Diff Symptom Count               = 6
+        Diff Possible Disease Count      = 5
+
+==============================================================================
+  SECTION 7: DIFFERENTIAL DIAGNOSIS & CLINICAL REASONING
+==============================================================================
+
+      Differential Diagnosis List:
+      #    Condition                            Match Score   
+      --   .................................... ..............
+      1    Malaria                              23.4%         
+      2    Bronchial Asthma                     18.4%         
+      3    Heart attack                         5.8%          
+      4    hepatitis A                          3.8%          
+      5    Paralysis (brain hemorrhage)         2.7%          
+
+      LLM Fallback Invoked...................... No (confidence sufficient)
+
+      Clinical Reasoning:
+      -------------------------------------------------------
+      [Source: Knowledge-Based Clinical Analysis]
+
+        Clinical assessment of a 35-year-old male presenting with
+        reported symptoms. Pathological basis: Plasmodium species (P.
+        falciparum most severe) transmitted by Anopheles mosquito.
+        Erythrocytic cycle causes periodic hemolysis, cytokine
+        release, and characteristic cyclic fevers. Vital sign
+        abnormalities noted: pyrexia (101.5 F). These findings
+        correlate with severe disease severity and support the
+        current triage classification. Recommended diagnostic
+        markers: Peripheral blood smear (thick/thin), Rapid
+        Diagnostic Test (RDT), CBC. Correlate with clinical findings
+        for diagnostic confirmation. Expected prognosis: Excellent
+        with early antimalarial therapy; P. falciparum can be severe.
+
+==============================================================================
+  SECTION 8: RECOMMENDED DIAGNOSTIC WORKUP
+==============================================================================
+
+      #    Investigation                        Priority     Department
+      --   .................................... ............ ................
+      1    Peripheral Blood Smear (Thick & Thin) Primary      Hematology
+           Clinical Indication: Gold standard for malaria parasite identification
+      2    Rapid Diagnostic Test (RDT) for Malaria Primary      Immunology
+           Clinical Indication: Quick antigen-based test for malaria
+      3    CBC (Complete Blood Count)           Primary      Hematology
+           Clinical Indication: Detect anemia and thrombocytopenia
+      4    Liver Function Test                  Secondary    Biochemistry
+           Clinical Indication: Assess hepatic involvement
+      5    Serum Bilirubin                      Secondary    Biochemistry
+           Clinical Indication: Check for hemolysis and jaundice
+
+==============================================================================
+  SECTION 9: PHARMACOTHERAPY RECOMMENDATIONS
+==============================================================================
+
+      1. Chloroquine  [Antimalarial]
+         Dosage              : 600 mg base stat, then 300 mg at 6h, 24h, 48h
+         Route               : Oral
+         Adverse Effects      : Nausea, headache, visual disturbance
+         Contraindications    : Retinal disease, G6PD deficiency
+         Clinical Precaution  : Complete full course
+
+      2. Artemether-Lumefantrine (Coartem)  [ACT (Artemisinin Combination)]
+         Dosage              : 4 tablets twice daily for 3 days
+         Route               : Oral
+         Adverse Effects      : Headache, dizziness
+         Contraindications    : First trimester pregnancy
+         Clinical Precaution  : Take with fatty food for absorption
+
+      3. Primaquine  [Antimalarial]
+         Dosage              : 15 mg daily for 14 days (P. vivax)
+         Route               : Oral
+         Adverse Effects      : Hemolytic anemia in G6PD deficiency
+         Contraindications    : G6PD deficiency, pregnancy
+         Clinical Precaution  : Test for G6PD before starting
+
+==============================================================================
+  SECTION 10: CLINICAL MANAGEMENT PLAN
+==============================================================================
+
+      Recommended Treatment..................... Hospitalization and medication. Immediate medical attention.
+      Clinical Urgency.......................... High
+      Follow-up Schedule........................ Requires continuous monitoring and specialist consultation.
+      Risk Classification....................... Low
+      Emergency Protocol........................ Standard care pathway
+
+------------------------------------------------------------------------------
+  CLINICAL ALERTS & CONTRAINDICATION FLAGS
+------------------------------------------------------------------------------
+
+      >> [WARN] Chloroquine: Contraindicated in Retinal disease, G6PD
+      deficiency. Verify patient history before administration.
+
+      >> [WARN] Artemether-Lumefantrine (Coartem): Contraindicated in
+      First trimester pregnancy. Verify patient history before
+      administration.
+
+      >> [WARN] Primaquine: Contraindicated in G6PD deficiency,
+      pregnancy. Verify patient history before administration.
+
+      >> [CRITICAL] Severe/Critical condition -- hospitalization may
+      be required. Ensure immediate medical supervision.
+
+      >> [WARN] High-risk medication(s): Primaquine. Requires close
+      monitoring.
+
+
+==============================================================================
+  AI-Assisted Clinical Report | MedAgentix AI v2.0
+  Pipeline: ClinicalBERT NER + Voting Ensemble (XGB/RF/LGBM)
+  Confidence Routing: >85% Direct | 70-85% Validated | <70% Meditron-7B
+  Framework: LangGraph Multi-Agent Orchestration
+------------------------------------------------------------------------------
+  DISCLAIMER: AI-generated diagnostic support tool. All findings
+  require clinical correlation. Verify diagnosis with laboratory
+  investigations and imaging before initiating treatment.
+  Not a substitute for clinical judgement.
+==============================================================================
+
+
+##############################################################################
+  CLINICAL DIAGNOSTIC REPORT
+  Patient: RAMESH GUPTA
+  Report ID: MED-202606022309
+  Generated: 02-Jun-2026 23:09:06
+##############################################################################
+
+
+  PATIENT INFORMATION
+  ~~~~~~~~~~~~~~~~~~~
+
+      Name...................................... Ramesh Gupta
+      Age....................................... 72 years
+      Gender.................................... Male
+      Report Date............................... 02-Jun-2026  23:09
+      Report ID................................. MED-202606022309
+
+  PRESENTING COMPLAINTS
+  ~~~~~~~~~~~~~~~~~~~~~
+
+      [+] Fatigue                        Duration: -
+      [+] Difficulty Breathing           Duration: -
+      [+] Chest Pain                     Duration: since yesterday
+      [+] Vomiting                       Duration: -
+
+  VITALS
+  ~~~~~~
+
+      Heart Rate................................ 110 bpm  [Tachycardia]
+      SpO2...................................... 91%  [Hypoxemia]
+      Blood Pressure............................ 165/100 mmHg
+      Temperature............................... 99.2 F
+      Cholesterol............................... 260 mg/dL
+
+  MEDICAL HISTORY
+  ~~~~~~~~~~~~~~~
+
+      Past Medical History (PMH)................ Cardiac History, Hypertension
+      Social / Lifestyle Factors................ Smoking, Obesity
+
+==============================================================================
+  SECTION 1: CLINICAL IMPRESSION
+==============================================================================
+
+      Primary Diagnosis......................... Heart attack  (ICD-10: I21.9)
+      Diagnostic Confidence..................... 96.7%  [High (>90%)]
+      Clinical Severity......................... Critical
+      Disease Category.......................... Cardiovascular / Acute Coronary Syndrome
+      Diagnosis Source.......................... Differential Diagnosis Engine (Knowledge-Based)
+      Agent Agreement Score..................... 0.67
+
+      Differential Considerations:
+      Rank   Condition                          Probability 
+      ----   .................................. ............
+      1      Bronchial Asthma                   0.2%         << Primary
+
+==============================================================================
+  SECTION 2: PATHOPHYSIOLOGY & CLINICAL CONTEXT
+==============================================================================
+
+      Disease Mechanism:
+        Atherosclerotic plaque rupture triggers thrombus formation in
+        coronary artery, causing myocardial ischemia and necrosis.
+        ST-elevation indicates transmural infarction (STEMI);
+        non-ST-elevation (NSTEMI) involves subendocardial injury.
+
+      Key Diagnostic Markers.................... Troponin I/T, ECG (ST-elevation), CK-MB, BNP, Echocardiography
+      Expected Prognosis........................ Time-critical; door-to-balloon <90 min for STEMI; variable based on infarct size
+
+==============================================================================
+  SECTION 3: CLINICAL SYMPTOM ANALYSIS
+==============================================================================
+
+      No structured symptoms extracted from clinical text.
+
+==============================================================================
+  SECTION 4: RISK STRATIFICATION
+==============================================================================
+
+      Overall Risk Level........................ High
+      Identified Risk Factors................... 6 factors
+
+      Risk Factor                          Weight     Category
+      .................................... .......... ................
+      Age > 60                             -          Clinical
+      Hypertension                         -          Clinical
+      High Cholesterol                     -          Clinical
+      Smoking                              -          Clinical
+      Obesity                              -          Clinical
+      Cardiac History                      -          Clinical
+
+==============================================================================
+  SECTION 5: EMERGENCY TRIAGE ASSESSMENT
+==============================================================================
+
+      Emergency Classification.................. CRITICAL -- IMMEDIATE INTERVENTION REQUIRED
+      Triage Level (ESI)........................ Level 1
+
+      Abnormal Vital Sign Flags:
+        [FLAG] Oxygen Level: 92  (Normal threshold: ?)
+
+      Symptom Progression....................... Stable
+      Temporal Urgency.......................... Critical
+      Onset Category............................ N/A
+
+==============================================================================
+  SECTION 6: PREDICTIVE MODEL OUTPUT
+==============================================================================
+
+      Ensemble Prediction....................... peptic ulcer
+      Prediction Probability.................... 0.4234  (42.3%)
+      Model Architecture........................ Voting Ensemble (XGBoost + RF + LightGBM)
+
+      Ranked Differential (ML-based):
+      Rank   Disease                            Probability    Decision
+      ----   .................................. .............. ..........
+      1      peptic ulcer                       0.4234         << Selected
+      2      stroke                             0.2666         
+      3      allergy                            0.0469         
+      4      anemia                             0.0302         
+      5      arthritis                          0.0249         
+
+      Active Feature Signals (12 features):
+        Age                              = 72
+        Gender                           = 1
+        Blood Pressure                   = 2
+        Cholesterol                      = 260
+        Duration                         = 3
+        Severity                         = 3
+        Symptom Count                    = 1
+        Temporal Risk Score              = 1.0
+        Diff Symptom Count               = 4
+        Diff Possible Disease Count      = 2
+
+==============================================================================
+  SECTION 7: DIFFERENTIAL DIAGNOSIS & CLINICAL REASONING
+==============================================================================
+
+      Differential Diagnosis List:
+      #    Condition                            Match Score   
+      --   .................................... ..............
+      1    Heart attack                         96.7%         
+      2    Bronchial Asthma                     0.2%          
+
+      LLM Fallback Invoked...................... No (confidence sufficient)
+
+      Clinical Reasoning:
+      -------------------------------------------------------
+      [Source: Knowledge-Based Clinical Analysis]
+
+        Clinical assessment of a 72-year-old male presenting with
+        reported symptoms. Pathological basis: Atherosclerotic plaque
+        rupture triggers thrombus formation in coronary artery,
+        causing myocardial ischemia and necrosis. ST-elevation
+        indicates transmural infarction (STEMI); non-ST-elevation
+        (NSTEMI) involves subendocardial injury. Identified risk
+        factors (Age > 60, Hypertension, High Cholesterol, Smoking)
+        further support the clinical suspicion and may influence
+        disease severity and management approach. Vital sign
+        abnormalities noted: tachycardia (110 bpm), hypoxemia (SpO2
+        91%). These findings correlate with critical disease severity
+        and support the current triage classification. EMERGENCY
+        CLASSIFICATION: Patient meets criteria for immediate clinical
+        intervention. Triage Level 1. Initiate emergency protocol and
+        stabilize before definitive management. Recommended
+        diagnostic markers: Troponin I/T, ECG (ST-elevation), CK-MB,
+        BNP, Echocardiography. Correlate with clinical findings for
+        diagnostic confirmation. Expected prognosis: Time-critical;
+        door-to-balloon <90 min for STEMI; variable based on infarct
+        size.
+
+==============================================================================
+  SECTION 8: RECOMMENDED DIAGNOSTIC WORKUP
+==============================================================================
+
+      #    Investigation                        Priority     Department
+      --   .................................... ............ ................
+      1    ECG (Electrocardiogram)              Primary      Cardiology
+           Clinical Indication: Detect ST-elevation and heart rhythm abnormalities
+      2    Troponin-I / Troponin-T              Primary      Biochemistry
+           Clinical Indication: Gold standard biomarker for heart muscle damage
+      3    Chest X-Ray                          Primary      Radiology
+           Clinical Indication: Assess heart size and rule out other causes
+      4    Echocardiography                     Primary      Cardiology
+           Clinical Indication: Evaluate heart wall motion and ejection fraction
+      5    CBC (Complete Blood Count)           Secondary    Hematology
+           Clinical Indication: Baseline blood assessment
+      6    Lipid Profile                        Secondary    Biochemistry
+           Clinical Indication: Assess cholesterol and triglyceride levels
+      7    BNP / NT-proBNP                      Secondary    Biochemistry
+           Clinical Indication: Assess for heart failure
+
+==============================================================================
+  SECTION 9: PHARMACOTHERAPY RECOMMENDATIONS
+==============================================================================
+
+      1. Atorvastatin (Lipitor)  [Statin]
+         Dosage              : 40-80 mg once daily
+         Route               : Oral
+         Adverse Effects      : Muscle pain, liver enzyme elevation
+         Contraindications    : Active liver disease, pregnancy
+         Clinical Precaution  : Monitor liver function tests
+
+      2. Aspirin  [Antiplatelet]
+         Dosage              : 325 mg stat, then 75-100 mg daily
+         Route               : Oral (chew immediately)
+         Adverse Effects      : GI bleeding, bruising
+         Contraindications    : Active bleeding, aspirin allergy
+         Clinical Precaution  : Chew first dose for rapid absorption
+
+      3. Clopidogrel (Plavix)  [Antiplatelet]
+         Dosage              : 75 mg once daily
+         Route               : Oral
+         Adverse Effects      : Bleeding, bruising
+         Contraindications    : Active pathological bleeding
+         Clinical Precaution  : Continue for at least 12 months post-event
+
+      4. Nitroglycerin (GTN)  [Nitrate]
+         Dosage              : 0.4 mg sublingual as needed
+         Route               : Sublingual
+         Adverse Effects      : Headache, dizziness, flushing
+         Contraindications    : Severe hypotension, use of PDE5 inhibitors
+         Clinical Precaution  : Sit or lie down before taking
+
+      5. Metoprolol (Lopressor)  [Beta Blocker]
+         Dosage              : 25-50 mg twice daily
+         Route               : Oral
+         Adverse Effects      : Bradycardia, fatigue
+         Contraindications    : Severe bradycardia, heart block
+         Clinical Precaution  : Do not stop abruptly
+
+==============================================================================
+  SECTION 10: CLINICAL MANAGEMENT PLAN
+==============================================================================
+
+      Recommended Treatment..................... Emergency intervention. ICU admission may be required.
+      Clinical Urgency.......................... Critical
+      Follow-up Schedule........................ Immediate specialist intervention required.
+      Risk Classification....................... High
+      Emergency Protocol........................ Activated
+
+------------------------------------------------------------------------------
+  CLINICAL ALERTS & CONTRAINDICATION FLAGS
+------------------------------------------------------------------------------
+
+      >> [WARN] Geriatric patient -- consider reduced dosage and
+      potential drug interactions. Monitor renal and hepatic
+      function.
+
+      >> [WARN] Atorvastatin (Lipitor): Contraindicated in Active
+      liver disease, pregnancy. Verify patient history before
+      administration.
+
+      >> [WARN] Aspirin: Contraindicated in Active bleeding, aspirin
+      allergy. Verify patient history before administration.
+
+      >> [WARN] Clopidogrel (Plavix): Contraindicated in Active
+      pathological bleeding. Verify patient history before
+      administration.
+
+      >> [WARN] Nitroglycerin (GTN): Contraindicated in Severe
+      hypotension, use of PDE5 inhibitors. Verify patient history
+      before administration.
+
+      >> [WARN] Metoprolol (Lopressor): Contraindicated in Severe
+      bradycardia, heart block. Verify patient history before
+      administration.
+
+      >> [CRITICAL] Severe/Critical condition -- hospitalization may
+      be required. Ensure immediate medical supervision.
+
+
+==============================================================================
+  AI-Assisted Clinical Report | MedAgentix AI v2.0
+  Pipeline: ClinicalBERT NER + Voting Ensemble (XGB/RF/LGBM)
+  Confidence Routing: >85% Direct | 70-85% Validated | <70% Meditron-7B
+  Framework: LangGraph Multi-Agent Orchestration
+------------------------------------------------------------------------------
+  DISCLAIMER: AI-generated diagnostic support tool. All findings
+  require clinical correlation. Verify diagnosis with laboratory
+  investigations and imaging before initiating treatment.
+  Not a substitute for clinical judgement.
+==============================================================================
+
+
+##############################################################################
+  CLINICAL DIAGNOSTIC REPORT
+  Patient: PRIYA MEHTA
+  Report ID: MED-202606022309
+  Generated: 02-Jun-2026 23:09:11
+##############################################################################
+
+
+  PATIENT INFORMATION
+  ~~~~~~~~~~~~~~~~~~~
+
+      Name...................................... Priya Mehta
+      Age....................................... 25 years
+      Gender.................................... Female
+      Report Date............................... 02-Jun-2026  23:09
+      Report ID................................. MED-202606022309
+
+  PRESENTING COMPLAINTS
+  ~~~~~~~~~~~~~~~~~~~~~
+
+      [+] Fatigue                        Duration: -
+      [+] Headache                       Duration: today
+      [+] Runny Nose                     Duration: 2 days
+
+  VITALS
+  ~~~~~~
+
+      Heart Rate................................ 72 bpm  [Normal sinus]
+      SpO2...................................... 99%  [Normal]
+      Blood Pressure............................ 110/70 mmHg
+      Temperature............................... 98.8 F
+      Cholesterol............................... 170 mg/dL
+
+  MEDICAL HISTORY
+  ~~~~~~~~~~~~~~~
+
+      Past Medical History (PMH)................ None documented
+      Social / Lifestyle Factors................ None documented
+
+==============================================================================
+  SECTION 1: CLINICAL IMPRESSION
+==============================================================================
+
+      Primary Diagnosis......................... Allergy  (ICD-10: T78.4)
+      Diagnostic Confidence..................... 32.3%  [Low (<50%)]
+      Clinical Severity......................... Moderate
+      Disease Category.......................... Immunological
+      Diagnosis Source.......................... Flagged For Review
+      Agent Agreement Score..................... 0.5
+
+      Differential Considerations:
+      Rank   Condition                          Probability 
+      ----   .................................. ............
+      1      Paralysis (brain hemorrhage)       4.2%         << Primary
+      2      AIDS                               2.1%         
+      3      Alcoholic hepatitis                2.0%         
+      4      Acne                               2.0%         
+
+==============================================================================
+  SECTION 2: PATHOPHYSIOLOGY & CLINICAL CONTEXT
+==============================================================================
+
+      Disease Mechanism:
+        IgE-mediated Type I hypersensitivity. Mast cell degranulation
+        releases histamine, leukotrienes, and prostaglandins causing
+        vasodilation, edema, and bronchoconstriction.
+
+      Key Diagnostic Markers.................... IgE levels, Skin prick test, Eosinophil count
+      Expected Prognosis........................ Manageable; avoidance + antihistamines
+
+==============================================================================
+  SECTION 3: CLINICAL SYMPTOM ANALYSIS
+==============================================================================
+
+      No structured symptoms extracted from clinical text.
+
+==============================================================================
+  SECTION 4: RISK STRATIFICATION
+==============================================================================
+
+      Overall Risk Level........................ Low
+      Identified Risk Factors................... 0 factors
+
+==============================================================================
+  SECTION 5: EMERGENCY TRIAGE ASSESSMENT
+==============================================================================
+
+      Emergency Classification.................. Non-Emergency
+      Triage Level (ESI)........................ Level 3
+
+      Symptom Progression....................... Stable
+      Temporal Urgency.......................... Low
+      Onset Category............................ N/A
+
+==============================================================================
+  SECTION 6: PREDICTIVE MODEL OUTPUT
+==============================================================================
+
+      Ensemble Prediction....................... peptic ulcer
+      Prediction Probability.................... 0.4747  (47.5%)
+      Model Architecture........................ Voting Ensemble (XGBoost + RF + LightGBM)
+
+      Ranked Differential (ML-based):
+      Rank   Disease                            Probability    Decision
+      ----   .................................. .............. ..........
+      1      peptic ulcer                       0.4747         << Selected
+      2      stroke                             0.2778         
+      3      migraine                           0.0503         
+      4      gastroenteritis                    0.0432         
+      5      ckd                                0.0428         
+
+      Active Feature Signals (7 features):
+        Age                              = 25
+        Blood Pressure                   = 1
+        Cholesterol                      = 170
+        Duration                         = 3
+        Symptom Count                    = 1
+        Diff Symptom Count               = 3
+        Diff Possible Disease Count      = 5
+
+==============================================================================
+  SECTION 7: DIFFERENTIAL DIAGNOSIS & CLINICAL REASONING
+==============================================================================
+
+      Differential Diagnosis List:
+      #    Condition                            Match Score   
+      --   .................................... ..............
+      1    Allergy                              32.3%         
+      2    Paralysis (brain hemorrhage)         4.2%          
+      3    AIDS                                 2.1%          
+      4    Alcoholic hepatitis                  2.0%          
+      5    Acne                                 2.0%          
+
+      LLM Fallback Invoked...................... No (confidence sufficient)
+
+      Clinical Reasoning:
+      -------------------------------------------------------
+      [Source: Knowledge-Based Clinical Analysis]
+
+        Clinical assessment of a 25-year-old female presenting with
+        reported symptoms. Pathological basis: IgE-mediated Type I
+        hypersensitivity. Mast cell degranulation releases histamine,
+        leukotrienes, and prostaglandins causing vasodilation, edema,
+        and bronchoconstriction. Recommended diagnostic markers: IgE
+        levels, Skin prick test, Eosinophil count. Correlate with
+        clinical findings for diagnostic confirmation. Expected
+        prognosis: Manageable; avoidance + antihistamines.
+
+==============================================================================
+  SECTION 8: RECOMMENDED DIAGNOSTIC WORKUP
+==============================================================================
+
+      #    Investigation                        Priority     Department
+      --   .................................... ............ ................
+      1    Clinical Examination                 Primary      Clinical Assessment
+           Clinical Indication: Physical examination of nasal passages
+      2    Allergy Skin Prick Test              Primary      Immunology
+           Clinical Indication: Identify specific allergens causing rhinitis
+      3    Serum IgE Level                      Secondary    Immunology
+           Clinical Indication: Measure allergic response markers
+      4    Nasal Endoscopy                      Secondary    ENT
+           Clinical Indication: Rule out polyps or structural issues
+
+==============================================================================
+  SECTION 9: PHARMACOTHERAPY RECOMMENDATIONS
+==============================================================================
+
+      1. Paracetamol (Tylenol)  [Analgesic / Antipyretic]
+         Dosage              : 500 mg every 4-6 hours as needed
+         Route               : Oral
+         Adverse Effects      : Rare at normal dose
+         Contraindications    : Severe liver disease
+         Clinical Precaution  : Stay hydrated; rest well
+
+      2. Cetirizine (Zyrtec)  [Antihistamine]
+         Dosage              : 10 mg once daily
+         Route               : Oral
+         Adverse Effects      : Drowsiness, dry mouth
+         Contraindications    : Severe renal impairment
+         Clinical Precaution  : May cause drowsiness
+
+      3. Pseudoephedrine (Sudafed)  [Decongestant]
+         Dosage              : 60 mg every 4-6 hours
+         Route               : Oral
+         Adverse Effects      : Insomnia, increased heart rate
+         Contraindications    : Uncontrolled hypertension, MAO inhibitors
+         Clinical Precaution  : Avoid before bedtime
+
+      4. Chlorpheniramine (Piriton)  [Antihistamine]
+         Dosage              : 4 mg every 4-6 hours
+         Route               : Oral
+         Adverse Effects      : Drowsiness, dry mouth
+         Contraindications    : Glaucoma, urinary retention
+         Clinical Precaution  : Avoid driving
+
+==============================================================================
+  SECTION 10: CLINICAL MANAGEMENT PLAN
+==============================================================================
+
+      Recommended Treatment..................... Medication and rest. Medical consultation recommended.
+      Clinical Urgency.......................... Medium
+      Follow-up Schedule........................ Schedule follow-up within 2-3 days.
+      Risk Classification....................... Low
+      Emergency Protocol........................ Standard care pathway
+
+------------------------------------------------------------------------------
+  CLINICAL ALERTS & CONTRAINDICATION FLAGS
+------------------------------------------------------------------------------
+
+      >> [WARN] Paracetamol (Tylenol): Contraindicated in Severe
+      liver disease. Verify patient history before administration.
+
+      >> [WARN] Cetirizine (Zyrtec): Contraindicated in Severe renal
+      impairment. Verify patient history before administration.
+
+      >> [WARN] Pseudoephedrine (Sudafed): Contraindicated in
+      Uncontrolled hypertension, MAO inhibitors. Verify patient
+      history before administration.
+
+      >> [WARN] Chlorpheniramine (Piriton): Contraindicated in
+      Glaucoma, urinary retention. Verify patient history before
+      administration.
+
+
+==============================================================================
+  AI-Assisted Clinical Report | MedAgentix AI v2.0
+  Pipeline: ClinicalBERT NER + Voting Ensemble (XGB/RF/LGBM)
+  Confidence Routing: >85% Direct | 70-85% Validated | <70% Meditron-7B
+  Framework: LangGraph Multi-Agent Orchestration
+------------------------------------------------------------------------------
+  DISCLAIMER: AI-generated diagnostic support tool. All findings
+  require clinical correlation. Verify diagnosis with laboratory
+  investigations and imaging before initiating treatment.
+  Not a substitute for clinical judgement.
+==============================================================================
+
+
+##############################################################################
+  End of Clinical Report
+##############################################################################

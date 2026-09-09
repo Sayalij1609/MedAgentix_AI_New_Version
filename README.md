@@ -105,6 +105,8 @@ MedAgentix_AI/
 ├── rag/                              # ChromaDB RAG pipeline
 ├── xai/                              # SHAP + LIME explainability
 ├── reports/                          # Generated patient & doctor reports
+├── Docs/                             # Architecture & specification docs
+├── PROJECT_STARTUP_GUIDE.md          # Complete setup & startup guide
 ├── frontend_guide.md                 # UI design specification
 ├── config.py
 ├── app.py
@@ -142,6 +144,8 @@ Trained on `model_ready.csv` (2,520 samples × 28 features × 40 disease classes
 ---
 
 ## Quick Start
+
+> For a complete from-scratch guide including agent training and Meditron-7B loading, see [PROJECT_STARTUP_GUIDE.md](PROJECT_STARTUP_GUIDE.md).
 
 ```bash
 # Clone & setup

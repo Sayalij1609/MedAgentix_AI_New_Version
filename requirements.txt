@@ -1,21 +1,47 @@
+# ===== Core Framework =====
 flask
+flask-sqlalchemy
+flask-cors
+python-dotenv
+
+# ===== Auth =====
+PyJWT
+
+# ===== ML / Deep Learning =====
 xgboost
 lightgbm
-langgraph
-langchain
-chromadb
-transformers
+scikit-learn
+imbalanced-learn
 torch
+transformers
 accelerate
 bitsandbytes
+joblib
+
+# ===== Orchestration =====
+langgraph
+langchain
+
+# ===== RAG =====
+chromadb
+
+# ===== XAI =====
 shap
+
+# ===== LLM =====
+google-generativeai
+
+# ===== OCR / Image =====
 opencv-python
+
+# ===== Database =====
 psycopg2
 sqlalchemy
-pandas 
-numpy 
-scikit-learn 
-matplotlib 
-seaborn 
-shap 
-imbalanced-learn
+
+# ===== Data & Visualization =====
+pandas
+numpy
+matplotlib
+seaborn
+
+reportlab

@@ -5,7 +5,7 @@ __pycache__/
 .env
 
 # Virtual environment
-.venv/
+venv/
 
 # Trained model artifacts (too large for GitHub)
 models/symptom_model/ner/

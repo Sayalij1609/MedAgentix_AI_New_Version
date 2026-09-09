@@ -117,16 +117,28 @@ class DiagnosisService:
                     "duration": f"{s.get('duration_days', 3)} days"
                 })
 
+            def _to_int(val, default):
+                try:
+                    return int(val)
+                except (ValueError, TypeError):
+                    return default
+
+            def _to_float(val, default):
+                try:
+                    return float(val)
+                except (ValueError, TypeError):
+                    return default
+
             pipeline_inputs = {
                 "patient_text": data["chief_complaint"],
-                "patient_age": int(data.get("age", 40)),
+                "patient_age": _to_int(data.get("age", 40), 40),
                 "patient_gender": data.get("gender", "Male"),
                 "blood_pressure": bp_category,
                 "blood_pressure_reading": bp_reading,
-                "cholesterol": int(vitals_input.get("cholesterol", 180)),
-                "heart_rate": int(vitals_input.get("heart_rate", 80)),
-                "oxygen_level": int(vitals_input.get("oxygen_level", 98)),
-                "body_temperature": float(vitals_input.get("temperature", 98.6)),
+                "cholesterol": _to_int(vitals_input.get("cholesterol", 180), 180),
+                "heart_rate": _to_int(vitals_input.get("heart_rate", 80), 80),
+                "oxygen_level": _to_int(vitals_input.get("oxygen_level", 98), 98),
+                "body_temperature": _to_float(vitals_input.get("temperature", 98.6), 98.6),
                 "lifestyle_factors": data.get("lifestyle_factors", []),
                 "medical_history": data.get("medical_history", []),
                 "symptom_durations": symptom_durations
@@ -217,7 +229,11 @@ class DiagnosisService:
             # Format emergency status block
             emerg_status = final_diagnosis.get("emergency_status", {})
             is_emergency = emerg_status.get("is_emergency", False)
-            triage_level = int(emerg_status.get("triage_level", 3))
+            raw_triage = emerg_status.get("triage_level", 3)
+            try:
+                triage_level = int(raw_triage)
+            except (ValueError, TypeError):
+                triage_level = 3
 
             # Confidence Calibration Logic (Phase 3)
             confidence_pct = round(float(final_diagnosis.get("final_confidence", 0.0)) * 100, 1)
@@ -260,7 +276,7 @@ class DiagnosisService:
                 "severity": final_diagnosis.get("severity", "Moderate"),
                 "icd_code": icd_code,
                 "pathophysiology": pathophys_text,
-                "patient_age": int(data.get("age", 40)),
+                "patient_age": _to_int(data.get("age", 40), 40),
                 "patient_gender": data.get("gender", "Male"),
                 "differential_considerations": differential_considerations,
                 "recommended_drugs": recommended_drugs,
