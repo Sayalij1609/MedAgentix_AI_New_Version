@@ -53,7 +53,10 @@ python knowledge_base.py
 cd ..
 
 # 7. Meditron-7B Setup (LLM Fallback)
-pip install huggingface_hub llama-cpp-python
+pip install huggingface_hub
+# Windows NVIDIA GPU (CUDA 12.1 - Python 3.12):
+pip install https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.4-cu121/llama_cpp_python-0.3.4-cp312-cp312-win_amd64.whl
+# (Or Windows CPU-only: pip install https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.4/llama_cpp_python-0.3.4-cp312-cp312-win_amd64.whl)
 python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='TheBloke/meditron-7B-GGUF', filename='meditron-7b.Q4_K_M.gguf', local_dir='models/llm')"
 
 # 8. Frontend Setup
@@ -206,24 +209,56 @@ cd ..
 Meditron-7B is an open-source clinical LLM used by the Supervisor Agent when ML diagnostic confidence falls below 70%.
 
 #### Option A: GGUF Quantized Model (Recommended for 4GB+ VRAM or CPU)
-1. **Install GGUF loader:**
-   ```powershell
-   pip install llama-cpp-python huggingface_hub
-   ```
+
+1. **Install GGUF loader (`llama-cpp-python` pre-built wheels):**
+   - **For Windows with NVIDIA GPU (CUDA 12.1 — Python 3.12):**
+     ```powershell
+     pip install huggingface_hub
+     pip install https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.4-cu121/llama_cpp_python-0.3.4-cp312-cp312-win_amd64.whl
+     ```
+   - **For Windows with NVIDIA GPU (CUDA 12.4 — Python 3.12):**
+     ```powershell
+     pip install huggingface_hub
+     pip install https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.4-cu124/llama_cpp_python-0.3.4-cp312-cp312-win_amd64.whl
+     ```
+   - **For Windows CPU-Only:**
+     ```powershell
+     pip install huggingface_hub
+     pip install https://github.com/abetlen/llama-cpp-python/releases/download/v0.3.4/llama_cpp_python-0.3.4-cp312-cp312-win_amd64.whl
+     ```
+   - **For Linux / macOS:**
+     ```bash
+     pip install huggingface_hub llama-cpp-python
+     ```
+
+   > **Note for Windows CUDA Users:**  
+   > If running standalone python tests gives `RuntimeError: Failed to load shared library ... llama.dll: Could not find module ... (or one of its dependencies)`, PyTorch's bundled CUDA DLLs can be copied into the library directory:
+   > ```powershell
+   > python -c "import shutil, os, torch; src = os.path.join(os.path.dirname(torch.__file__), 'lib'); import llama_cpp; dst = os.path.join(os.path.dirname(llama_cpp.__file__), 'lib'); [shutil.copy2(os.path.join(src, f), dst) for f in ['cublas64_12.dll', 'cublasLt64_12.dll', 'cudart64_12.dll'] if os.path.exists(os.path.join(src, f))]; print('CUDA DLLs mapped successfully!')"
+   > ```
+
 2. **Download Meditron-7B GGUF (~4.1 GB):**
    ```powershell
    python -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='TheBloke/meditron-7B-GGUF', filename='meditron-7b.Q4_K_M.gguf', local_dir='models/llm')"
    ```
+
 3. **Enable Meditron in `config.py`:**
    Open `config.py` and set:
    ```python
    ENABLE_MEDITRON = True
    ```
+
 4. **Test & Verify Meditron Loading:**
-   Run an inference test:
-   ```powershell
-   python -c "from llm.meditron_inference import MeditronInference; mi = MeditronInference(); res = mi.reason_differential(['fever', 'cough', 'chest pain']); print(res)"
-   ```
+
+   - **GPU Mode (Default — Auto-offloads ~20/32 layers to GPU for ~2.5GB VRAM, rest on CPU):**
+     ```powershell
+     python -c "from llm.meditron_inference import MeditronInference; mi = MeditronInference(); res = mi.reason_differential(['fever', 'cough', 'chest pain']); print(res)"
+     ```
+
+   - **CPU-Only Mode (Forces 100% execution on CPU cores without GPU):**
+     ```powershell
+     python -c "import os; os.environ['CUDA_VISIBLE_DEVICES'] = ''; from llm.meditron_inference import MeditronInference; mi = MeditronInference(); res = mi.reason_differential(['fever', 'cough', 'chest pain']); print(res)"
+     ```
 
 #### Option B: HuggingFace Transformers Backend (Requires 5GB+ VRAM or 14GB+ RAM)
 If using Hugging Face weights directly without GGUF:
