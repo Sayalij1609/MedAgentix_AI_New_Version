@@ -155,6 +155,16 @@ class MeditronInference:
             return None
 
         try:
+            # On Windows, register PyTorch's CUDA DLLs so llama.dll can find cublas and cudart
+            if sys.platform == "win32":
+                try:
+                    import torch
+                    torch_lib = os.path.join(os.path.dirname(torch.__file__), "lib")
+                    if os.path.isdir(torch_lib):
+                        os.add_dll_directory(torch_lib)
+                except Exception:
+                    pass
+
             from llama_cpp import Llama
             print(f"  [Meditron] Loading GGUF from: {gguf_path}")
 
